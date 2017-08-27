@@ -30,6 +30,8 @@ Some useful tips to help you get started:
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
+### GitHub pages URL(to test in PageSpeed Insights): https://gladwinprince.github.io/frontend-nanodegree-mobile-portfolio/
+
 ##### Optimizations Done:
 1. Compressed and Resized versions of every image is used to reduce load time.
 2. Render blocking CSS are replaced with CSS media queries, where possible.
@@ -51,7 +53,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
-### GitHub pages URL(to test in PageSpeed Insights): https://gladwinprince.github.io/frontend-nanodegree-mobile-portfolio/
+
 ##### Optimization Done:
 1. The Layout reads in updatePositions() method was implemented initially, and the style changes are grouped together. This was done to attain 60FPS frame rate.
 
