@@ -450,6 +450,7 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
       var Pizzas=document.querySelectorAll(".randomPizzaContainer");
+      //The size change is checked and converted to the corresponding size's width(in percentage)
       switch(size){
           case "1":
             width=25;
@@ -464,6 +465,7 @@ var resizePizzas = function(size) {
            console.log("bug in sizeSwitcher");
       }
     for (var i = 0; i < Pizzas.length; i++) {
+        //setting the width corresponding to the new size to all Pizza elements
         Pizzas[i].style.width = width+"%";
     }
   }
@@ -514,6 +516,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  //Preventing FSL by saving Layout read initial and using the variable to access the data, thereby preventing unnecessary recalculation of style and Layout
   var scrollTop=document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(scrollTop + (i % 5));
