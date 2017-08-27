@@ -30,11 +30,32 @@ Some useful tips to help you get started:
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
+##### Optimizations Done:
+1. Compressed and Resized versions of every image is used to reduce load time.
+2. Render blocking CSS are replaced with CSS media queries, where possible.
+3. Parser blocking JS scripts were loaded asynchronously, where possible.
+4. Custom Font was removed due to its impact on performance.
+5. Minified version of all JS scripts are used to reduce Load time.
+
+##### Note:
+1. Google PageSpeed Insights recommends Browser Caching of CSS and JS scripts for a minimum of 8 days, but as I am using Github pages (which doesn't support .htaccess file or .config files due to security reasons) that only allows 10mins of caching. This recommendation cannot be fullfilled.
+
+2. Google PageSpeed Insights recommends Eliminating render blocking CSS/JS scripts, and suggests inline CSS as an alternative, but inlining large CSS blocks doesn't serve the basic purpose of CSS, splitting HTML and style elements. Hence, I have linked the CSS at the end of body, which makes it last to load and doesn't block any rendering.
+
+3. Google PageSpeed Insights recommends that the server responds in 200ms, but Github pages sometimes takes about 300ms to respond.
+
+###### Even though these recommendations can't be implemented, still the Page usually scores a 90+/100 in both Mobile and Desktop.
+
 #### Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
+
+##### Optimization Done:
+1. The Layout reads in updatePositions() method was implemented initially, and the style changes are grouped together. This was done to attain 60FPS frame rate.
+
+2. The determineDx() method has been replaced with a much simpler working. This seems to resize Pizza sizes within 1ms most of the time.
 
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
